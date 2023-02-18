@@ -1,0 +1,72 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Daire>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <div style="overflow-x:auto;">
+        @if ((int)Model.Count() > 0)
+        {
+            <h2>Menekşe Sitesi Daireleri</h2>
+
+        }
+            else
+            {
+                <h2>Henüz herhangi bir daire yok.
+                <br />Daire bilgilerini yazabilirsiniz.</h2>
+
+            }
+        <table>
+
+            <tr>
+                <th>Daire ID</th>
+                <th>Blok Numarası</th>
+                <th>Daire Numarası</th>
+                <th>Daire Katı</th>
+                <th>Daire Alanı</th>
+                <th>Daire Açıklaması</th>
+
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.DaireID</td>
+                    <td>@item.BlokNUMARA</td>
+
+                    <td>@item.DaireNUMARA</td>
+
+                    <td>@item.DaireKAT</td>
+
+                    <td>@item.DaireALAN</td>
+                    <td>@item.DaireACIKLAMA</td>
+
+
+                </tr>
+            }
+
+        </table>
+    </div>
+
+</body>
+</html>
